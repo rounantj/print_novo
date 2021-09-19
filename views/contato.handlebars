@@ -1,0 +1,123 @@
+
+
+
+
+
+<div class="page-title lb single-wrapper">
+   <div class="container">
+       <div class="row">
+           <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+               <h2><i class="fa fa-envelope-open-o bg-orange"></i> Contate-nos <small class="hidden-xs-down hidden-sm-down">Ficaremos felizes em te atender, venha vazer parte desse time. </small></h2>
+           </div><!-- end col -->
+           <div class="col-lg-4 col-md-4 col-sm-12 hidden-xs-down hidden-sm-down">
+               <ol class="breadcrumb">
+                   <li class="breadcrumb-item"><a href="/">Início</a></li>
+                   <li class="breadcrumb-item active">Contato</li>
+               </ol>
+           </div><!-- end col -->                    
+       </div><!-- end row -->
+   </div><!-- end container -->
+</div><!-- end page-title -->
+
+<section class="section wb">
+   <div class="container">
+       <div class="row">
+           <div class="col-lg-12">
+               <div class="page-wrapper">
+                   <div class="row">
+                       <div class="col-lg-5">
+                           <h4>Quem somos?</h4>
+                           <p>Somos uma startup de tecnologia e design gráfico .</p>
+          
+                           <h4>Como podemos te ajudar?</h4>
+                           <p>Criamos posts para suas redes sociais, banners para seu negócio, web sites, aplicações web, desktop e ainda postamos seu conteúdo em nosso blog. </p>
+    
+                           <h4>Quanto custa?</h4>
+                           <p>Cada caso precisa ser avaliado, afinal todos tem uma necessidade diferente, faça um orçamento!<br>Caso queira postar um conteúdo em nosso blog é totalmente gratúito.</p>
+                       </div>
+                       <div class="col-lg-7">
+                           <div class="form-wrapper">
+                               <input type="text" class="form-control verify" id="nome" placeholder="Seu nome">
+                               <input type="text" class="form-control verify" id="email" placeholder="Endereço de e-mail">
+                               <input type="text" class="form-control verify" id="telefone" placeholder="Telefone">
+                               <input type="text" class="form-control verify" id="assunto" placeholder="Assunto">
+                               <textarea class="form-control verify" id="mensagem" placeholder="Sua mensagem"></textarea>
+                               <button style="cursor: pointer;" id="contatu" class="btn btn-primary">Envia <i class="fa fa-envelope-open-o"></i></button>
+                               <p style="display: none;" id="retornando"></p>
+                           </div>
+                       </div>
+                   </div>
+               </div><!-- end page-wrapper -->
+           </div><!-- end col -->
+       </div><!-- end row -->
+   </div><!-- end container -->
+</section>
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
+
+<script>
+
+
+
+
+   $("#contatu").click(function(){
+
+      var pode = true
+      $(".verify").each(function(){
+         if($(this).val() == ""){
+            pode = false
+            $(this).css("border","1px solid red")
+         }
+      })
+
+
+
+
+              
+            
+               if(pode){
+                  var IMAIUL = [{
+                     "email":$("#email").val(),
+                     "nome":$("#nome").val(),
+                     "telefone":$("#telefone").val(),
+                     "assunto":$("#assunto").val(),
+                     "mensagem":$("#mensagem").val(),
+                  }]
+
+
+                  $.ajax({
+                     type: 'POST',
+                     url: 'https://printmer.com.br/insertContato',
+                     data: {IMAIUL},
+                     success: function (data) {
+                        console.log(data)
+                       
+                           $("#retornando").fadeIn()
+                           $(".verify").css("border","1px solid green")
+                           $("#retornando").html("E-mail enviado com sucesso!")
+                           $("#retornando").css("color","lightgreen")
+
+                 
+                        
+                     },
+                     error: function (data) {
+                        // em caso de erro...
+                     },
+                     complete: function(){
+                        // ao final da requisição...
+                     }
+                  });
+
+               }else{
+                           $("#retornando").fadeIn()
+                           $("#retornando").html("Preencha os campos em vermelho!")
+                           $("#retornando").css("color","red")
+               }
+})
+
+</script>
+

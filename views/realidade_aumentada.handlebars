@@ -1,0 +1,90 @@
+<!DOCTYPE html><!DOCTYPE html>
+<html lang="en">
+   <head>
+
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+      <title>Easter Hunt!</title>
+      <base href="/">
+      <script src="aframe-min.js"></script><script src="aframe-ar.js"></script>
+   </head>
+   <!-- Global site tag (gtag.js) - Google Analytics -->
+  
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-E3G37Z48LC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-E3G37Z48LC');
+</script>
+   <body style="margin : 0px; overflow: hidden; font-family: Monospace;">
+   
+      <a-scene embedded vr-mode-ui="enabled: false" arjs="trackingMethod: best; sourceType: webcam; detectionMode: mono_and_matrix; matrixCodeType: 3x3; debugUIEnabled: false; changeMatrixMode: cameraTransformMatrix">
+         
+            
+            
+           
+         
+         <a-entity camera>
+
+            
+             <a-marker type="barcode" data-code="1" value="1" registerevents="true">
+             <a-entity collada-model="url(buzato.dae)"   scale="0.3 0.3 0.3 0.3" transparent> </a-entity>
+                 
+            </a-marker>
+
+
+
+
+
+
+
+            <a-marker class="game-marker" id="marker2" type="barcode" data-code="2" value="2" registerevents="true">
+               <a-entity collada-model="url(model.dae)"  rotation="-90 0 0"   scale="8.2 8.2 8.2 8.2" transparent> </a-entity>
+            </a-marker>
+            <a-marker class="game-marker" id="marker4" type="barcode" data-code="4" value="4" registerevents="true">
+           
+               <a-entity  obj-model="obj: url(Bar_chair_2.obj); mtl: url(Bar_chair_2.mtl)" > </a-entity>
+            </a-marker>
+            <a-marker class="game-marker" id="marker5" type="barcode" data-code="5" value="5" registerevents="true">
+               <a-image src="./images/clues/vida.png" width="3" height="3" rotation="-90 0 0" position="0 0 0 -5" scale="2 2 2 2" transparent></a-image>
+            </a-marker>
+            <a-marker class="game-marker" id="marker6" type="barcode" data-code="6" value="6" registerevents="true">
+               <a-image src="./images/clues/quadro.png" width="2" height="2" rotation="-90 0 0" position="0 0 -0.5 -5" scale="2 2 2 2" transparent></a-image>
+            </a-marker>
+            <a-marker class="game-marker" id="marker7" type="barcode" data-code="7" value="7" registerevents="true">
+               <a-image src="./images/clues/flor.png" width="3" height="3" rotation="-90 0 0" position="0 0 -1.5 -5" scale="2 2 2 2" transparent></a-image>
+            </a-marker>
+            <a-marker class="game-marker" id="marker8" type="barcode" data-code="8" value="8" registerevents="true">
+               <a-image src="./images/clues/vida.png" width="2" height="2" rotation="-90 0 0" position="0 0 -1 -5" scale="2 2 2 2" transparent></a-image>
+            </a-marker>
+            <a-marker class="game-marker" id="marker9" type="barcode" data-code="9" value="9" registerevents="true">
+               <a-image src="./images/clues/quadro.png" width="2" height="2" rotation="-90 0 0" position="0 0 -0.5 -5" scale="1 1 2 1" transparent></a-image>
+            </a-marker>
+            <a-marker class="game-marker" id="marker10" type="barcode" data-code="10" value="10" registerevents="true">
+               <a-image src="./images/clues/flor.png" width="3" height="3" rotation="-90 0 0" position="0 0 -1.6 -5" scale="2 2 2 2" transparent></a-image>
+            </a-marker>
+         </a-entity>
+      </a-scene>
+      <div id="helpMenu">?</div>
+      <div style="display: none;" class="float-menu" id="menu-catch">
+         <div class="left"><a class="control" id="resetGame" href="javascript: void(0);">Novo Jogo</a></div>
+         <div class="right"><a class="control" id="viewProgress" href="javascript: void(0);">Ver Progresso</a></div>
+      </div>
+      <div style="display: none;" id="language"><a class="language-selector active" data-lang="pt-BR"><img src="./images/pt-BR.png" alt="Português"></a><a class="language-selector" data-lang="en-US"><img src="./images/en-US.png" alt="English"></a></div>
+      <div id="popup">
+         <div class="wrapper">
+            <h2 class="popup-title">&nbsp;</h2>
+            <div class="popup-content">
+               <p>&nbsp;</p>
+            </div>
+            <div class="extra-content"></div>
+            <a class="close" href="javascript:void(0);" id="closePopup"> X Fechar</a>
+         </div>
+      </div>
+      <script type="text/javascript" src="/main.js"></script>
+     
+   </body>
+</html>

@@ -1,0 +1,217 @@
+
+
+      
+  
+   
+   <div class="page-title lb single-wrapper">
+         <div class="container">
+             <div class="row">
+                 <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+                     <h2><i class="fa fa-smyle bg-orange"></i><mapa>{{MAPA}}</mapa><small class="hidden-xs-down1 hidden-sm-down1">Experimente nosso aplicativo! </small></h2>
+
+                     
+                 </div><!-- end col -->
+                 <div class="col-lg-4 col-md-4 col-sm-12 hidden-xs-down1 hidden-sm-down1">
+                     <ol class="breadcrumb">
+                         <li class="breadcrumb-item"><a href="/">Início</a></li>                          
+                         <li class="breadcrumb-item"><a href="/erangel">Erangel</a></li>                          
+                         <li class="breadcrumb-item"><a href="/miramar">Miramar</a></li>                          
+                         <li class="breadcrumb-item"><a href="/vikendi">Vikendi</a></li>                          
+                         <li class="breadcrumb-item"><a href="/savage">Savage</a></li>                          
+                       
+                     </ol>
+                     
+                 </div><!-- end col -->                    
+             </div><!-- end row -->
+         </div><!-- end container -->
+     </div><!-- end page-title -->
+
+     <section class="section">
+         <div class="container">
+             <div class="row">
+                 <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+
+                 
+
+                     <p style="text-align: center; color: orange;" id="feedback">Selecione o ponto de partida...</p>
+                    
+                     <div id="aviso" style="display:none" class="alert alert-light" role="alert">
+                        <hr>
+                        A previsão foi correta?<br><br><button class="btn btn-sm btn-success" style="cursor: pointer;" id="deuCerto">SIM</button><button class="btn btn-sm btn-danger" style="margin-left: 5%; cursor: pointer" id="deuErrado">NÃO</button>
+                        <hr>
+                       </div>
+                     
+                     <ol class="breadcrumb">
+                         <li class="breadcrumb-item partiu"><i style="background-color: rgb(3, 39, 3) !important;" class="fa fa-smyle bg-orange"></i>Partida: <span id="partiu">0</span></li>                          
+                         <li class="breadcrumb-item chegou"><i style="background-color: rgb(1, 46, 1) !important;" class="fa fa-smyle bg-orange"></i>Chegada: <span id="chegou">0</span></li>                          
+                         <li class="breadcrumb-item fechou">Previsão: <span id="fechou">0</span> <i style="background-color: green !important;" class="fa fa-smyle bg-orange"></i></li>                          
+                                           
+                       
+                     </ol>
+                 
+                 </div><!-- end col -->
+                               
+             </div><!-- end row -->
+
+            <div id="mapaPUBG" class="row">
+
+            </div>
+            
+         </div><!-- end container -->
+     </section>
+    
+
+   
+
+
+
+
+
+    <!-- JS dependencies -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+ 
+<script>
+   $(document).ready(function() {   
+
+
+   var MAPA = "{{MAPA}}".toUpperCase();
+   $("mapa").html(MAPA)
+   var amrgin = 30
+  // insertPNG("Erangel", 8, 64);
+   switch (MAPA) {
+       case "ERANGEL": amrgin = 53;  insertPNG("Erangel", 8, 64);   break;
+       case "VIKENDI": amrgin = 43;  insertPNG("Vikendi", 6, 36);   break;
+       case "MIRAMAR": amrgin = 53;  insertPNG("Miramar", 8, 64);   break;
+       case "SAVAGE": amrgin = 33;   insertPNG("Savage", 4, 16);    break; 
+
+       default:
+           break;
+   }
+
+function insertPNG(mapa, COLUMNS, LIMIT){
+   var perc = Math.ceil(100 / COLUMNS) - 0.5
+   for(let a = LIMIT; a >0; a--){
+       var  classe = "normal"
+           if(a % COLUMNS === 0){
+             $("#mapaPUBG").append("<br>")
+               classe = "fromTo"    
+               $("#"+(a+1)).addClass("fromTo")                 
+           }
+           
+           if(a <= COLUMNS || a > (LIMIT - COLUMNS)){  
+               classe = "fromTo"                                           
+           }
+           
+           $("#mapaPUBG").append("<img style=' max-width: "+perc+"%;' class='pictureFRAME "+classe+"' id='"+a+"' src='mapas/"+mapa+"/"+a+".png'>")   
+   }
+}
+
+var colector = [], destinate = true, resultadoCorrente = 0
+$(".pictureFRAME").click(function(){
+    if(destinate){
+        $(this).css("filter","contrast(200%)") 
+            console.log("Clicou -> "+ $(this).attr("id"))
+            $(this).css("opacity","1")
+
+            if(colector.length == 0){
+                $(".partiu").css("color","green")
+                $(".partiu").animate({fontSize: '1em'}, "slow");
+                $("#partiu").html($(this).attr("id"))
+                $("#feedback").html("Selecione agora o ponto de chegada...")
+                colector.push({"partida":  $(this).attr("id")})
+            }else if(colector.length == 1){
+                $(".chegou").css("color","green")
+                $(".chegou").animate({fontSize: '1em'}, "slow");
+                $("#chegou").html($(this).attr("id"))
+                $("#feedback").html("Vou lhe mostrar onde a safe vai fechar. Aguarde...")
+
+
+                setTimeout(() => {
+                    $(".fechou").css("color","green")
+                    $(".fechou").animate({fontSize: '1em'}, "slow");
+                    $(".pictureFRAME").css("filter","blur(5px)")
+                    
+                    var qual =  Number($(".normal")[Math.floor(Math.random() * $(".normal").length)].id);
+                    $("#fechou").html(qual)
+                    $("#"+qual).css("filter","none")
+
+                    resultadoCorrente = qual
+
+
+                    $("#feedback").html("Muito bem, agora é só pagar pra ver!<br>Não se esqueça de responder se a previsão foi correta ou não, com sua resposta podemos melhorar sempre nossa IA.")
+                    $("#aviso").fadeIn()
+                    $("#feedback").css("color","green")
+                    alert("A safe fechará na localização "+qual)
+                }, 5000);
+
+                //AQUI A LOGICA MAIN
+                colector.push({"chegada":  $(this).attr("id")})
+            }
+            else if(colector.length == 2){
+                $("#feedback").html("Vamos começar de novo...")
+                colector = []
+            }else{
+                colector = []
+            }
+    }else{
+        $(".pictureFRAME").css("filter","blur(5px)")
+        $(this).css("filter","none")
+        colector.push({"resultadoCorreto":$(this).attr("id") })
+        colector.push({"mapa":MAPA })
+
+        $.ajax({
+            type: 'POST',
+            url: '/feedback',
+            data: {colector},
+            success: function (data) {
+                console.log(data)
+                $("#feedback").css("color","orange")
+                $("#feedback").html("Obrigado!<br>Acabamos de incluir sua resposta em nosso banco de dados.<br>Continue usando nosso aplicativo, ficaremos cada vez melhores!")
+                alert("Obrigado!\n\nAcabamos de incluir sua resposta em nosso banco de dados.\nContinue usando nosso aplicativo, ficaremos cada vez melhores!")
+                location.reload()
+            },
+            error: function (data) {
+                // em caso de erro...
+            },
+            complete: function(){
+                // ao final da requisição...
+            }
+        });
+        
+    }
+   
+
+   
+})
+
+$("#deuCerto").click(function(){
+    colector.push({"resultadoCorreto":resultadoCorrente })
+    colector.push({"mapa":MAPA })
+
+    $.ajax({
+        type: 'POST',
+        url: '/feedback',
+        data: {colector},
+        success: function (data) {
+            console.log(data)
+
+                alert("Obrigado!\n\nAcabamos de incluir sua resposta em nosso banco de dados.\nContinue usando nosso aplicativo, ficaremos cada vez melhores!")
+                location.reload()
+        },
+        error: function (data) {
+            // em caso de erro...
+        },
+        complete: function(){
+            // ao final da requisição...
+        }
+    });
+});
+
+$("#deuErrado").click(function(){
+    destinate = false
+    $("#feedback").css("color","red")
+    $("#feedback").html("Que pena!<br>Clique então no ponto mais próximo que sua safe fechou, assim salvaremos o resultado e ele servirá para melhorar nossos acertos!")
+});
+
+}); 
+</script>

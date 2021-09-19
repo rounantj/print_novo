@@ -1,0 +1,335 @@
+
+
+        <section class="section first-section">
+            <div class="container-fluid">
+                <div class="masonry-blog clearfix">
+   
+                    <div class="first-slot">
+                        <div class="masonry-box post-media">
+                             <img src="upload/tech_01.jpg" id="destak1-img_src" alt="" class="img-fluid">
+                             <div class="shadoweffect">
+                                <div class="shadow-desc">
+                                    <div class="blog-meta">
+                                        <span class="bg-orange"><a  class="destak1-link" href="" title="" id="destak1-category">Technology</a></span>
+                                        <h4><a class="destak1-link" href="" title="" id="destak1-called">Say hello to real handmade office furniture! Clean & beautiful design</a></h4>
+                                        <small><a class="destak1-link" href="" title="" id="destak1-createdAt">24 July, 2017</a></small>
+                                        <small><a class="destak1-linkAutor" href="" title="" id="destak1-credits">by Amanda</a></small>
+                                    </div><!-- end meta -->
+                                </div><!-- end shadow-desc -->
+                            </div><!-- end shadow -->
+                        </div><!-- end post-media -->
+                    </div><!-- end first-side -->
+   
+                    <div style="display: none;" class="second-slot">
+                        <div class="masonry-box post-media">
+                            <img src="upload/tech_02.jpg" id="destak2-img_src" alt="" class="img-fluid">
+                             <div class="shadoweffect">
+                                <div class="shadow-desc">
+                                    <div class="blog-meta">
+                                        <span class="bg-orange"><a  class="destak2-link" href="" title="" id="destak2-category">Technology</a></span>
+                                        <h4><a class="destak2-link" href="" title="" id="destak2-called">Say hello to real handmade office furniture! Clean & beautiful design</a></h4>
+                                        <small><a class="destak2-link" href="" title="" id="destak2-createdAt">24 July, 2017</a></small>
+                                        <small><a class="destak2-linkAutor" href="" title="" id="destak2-credits">by Amanda</a></small>
+                                    </div><!-- end meta -->
+                                </div><!-- end shadow-desc -->
+                             </div><!-- end shadow -->
+                        </div><!-- end post-media -->
+                    </div><!-- end second-side -->
+   
+                    <div style="display: none;" class="last-slot">
+                        <div class="masonry-box post-media">
+                            <img src="upload/tech_03.jpg" id="destak3-img_src" alt="" class="img-fluid">
+                             <div class="shadoweffect">
+                                <div class="shadow-desc">
+                                    <div class="blog-meta">
+                                        <span class="bg-orange"><a  class="destak3-link" href="" title="" id="destak3-category">Technology</a></span>
+                                        <h4><a class="destak3-link" href="" title="" id="destak3-called">Say hello to real handmade office furniture! Clean & beautiful design</a></h4>
+                                        <small><a class="destak3-link" href="" title="" id="destak3-createdAt">24 July, 2017</a></small>
+                                        <small><a class="destak3-linkAutor" href="" title="" id="destak3-credits">by Amanda</a></small>
+                                    </div><!-- end meta -->
+                                </div><!-- end shadow-desc -->
+                             </div><!-- end shadow -->
+                        </div><!-- end post-media -->
+                    </div><!-- end second-side -->
+                </div><!-- end masonry -->
+            </div>
+   
+   
+            
+        </section>
+   
+        <section class="section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
+                        <div class="page-wrapper">
+                            <div class="blog-top clearfix">
+                                <h4 class="pull-left">Posts Recentes <a href="#"><i class="fa fa-rss"></i></a></h4>
+                            </div><!-- end blog-top -->
+   
+                            <div class="blog-list clearfix">
+                                {{#each ARTICLES}}
+                                <div class="blog-box row articles article-{{id}}">
+                                    <div class="col-md-4">
+                                        <div class="post-media">
+                                            <a class="link" href="/artigo/{{link}}" title="">
+                                                <img  src="{{img_src}}" alt="" class="img-fluid imagem">
+                                                <div class="hovereffect"></div>
+                                            </a>
+                                        </div><!-- end media -->
+                                    </div><!-- end col -->
+   
+                                    <div class="blog-meta big-meta col-md-8">
+                                        <h4><a href="/artigo/{{link}}" title="" class="titulo">{{title}}</a></h4>
+                                        <p class="called">{{called}}</p>
+                                        <small class="firstsmall"><a class="bg-orange categoria" href="//categoria/news" title="" >{{category}}</a></small>
+                                        <small><a href="//artigo/Top_10+_care_advice_for_your_toenails" title="" class="dateCreate">{{createdAt}}</a></small>
+                                        <small><a href="//autor/Ronan" title="">by {{credits}}</a></small>
+                                        <small><a href="//artigo/Top_10+_care_advice_for_your_toenails" title=""><i class="fa fa-eye"></i> <views class="views">{{views}}</views></a></small>
+                                    </div><!-- end meta -->
+                                </div><!-- end blog-box -->
+                                <hr>
+                                <script type="text/javascript">
+	atOptions = {
+		'key' : 'faebf1446b1cff8a14459a217549fc31',
+		'format' : 'iframe',
+		'height' : 60,
+		'width' : 468,
+		'params' : {}
+	};
+	document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.variouscreativeformats.com/faebf1446b1cff8a14459a217549fc31/invoke.js"></scr' + 'ipt>');
+</script>
+                                <hr class="invis">
+                                {{/each}}
+   
+                             
+   
+                               
+                            </div><!-- end blog-list -->
+                        </div><!-- end page-wrapper -->
+   
+                        <hr class="invis">
+   
+                        <div style="display: none;" class="row">
+                            <div class="col-md-12">
+                                <nav aria-label="Page navigation">
+                                    <ul class="pagination justify-content-start">
+                                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                        <li class="page-item">
+                                            <a class="page-link" href="#">Next</a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div><!-- end col -->
+                        </div><!-- end row -->
+                    </div><!-- end col -->
+   
+                    <div  class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
+                        <div class="sidebar">
+                            <div class="widget">
+                                <div class="banner-spot clearfix">
+                                    <div class="banner-img">
+                                       
+<script type="text/javascript" rel="skimlinks-ref-banner">
+    (function(e,t,n,r){var i=n.currentScript,s=null;if(i)s=i;else{var o=n.getElementsByTagName(r),u=o.length-1;for(var a=u;a>=0;a--)if(o[a].getAttribute("rel")==="skimlinks-ref-banner"){s=o[a];break}}s&&setTimeout(function(){var i=e[t]||(e[t]=[]),o={"imageUrl":"/banners/img/referral/make_money/200X200.gif","wid":"07","creativeId":60710,"color":"blue","size":"200X200","domainId":"1671484","publisherId":193962,"bannerUrl":"/banners/js/referral/referral_banner.min.js","cdnUrl":"https://s.skimresources.com"};if(i.length===0){var u=n.createElement(r);u.src=o.cdnUrl+o.bannerUrl,u.async=!0,s.parentNode.insertBefore(u,s)}i.push({el:s,config:o})})})(this,"__skimlinksBanners",document,"script");
+    </script>
+                                </div><!-- end banner -->
+                            </div><!-- end widget -->
+   
+                         
+   
+                            <div class="widget">
+                                <h2 class="widget-title">Posts Mais Acessados</h2>
+                                <div class="blog-list-widget">
+                                    <div class="list-group" id="postsMaisAcessados">
+   
+   
+                                        
+   
+                                      
+   
+                                    </div>
+                                </div><!-- end blog-list -->
+                            </div><!-- end widget -->
+   
+                            <div class="widget">
+                                <h2 class="widget-title">Recent Reviews</h2>
+                                <div class="blog-list-widget">
+                                    <div class="list-group" id="atualizacoesRecentes">
+   
+                                        
+   
+                                      
+                                    </div>
+                                </div><!-- end blog-list -->
+                            </div><!-- end widget -->
+   
+                            <div class="widget">
+                                <h2 class="widget-title">Siga-nos</h2>
+   
+                                <div class="row text-center">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                                        <a href="https://facebook.com/Gamora_design" class="social-button facebook-button">
+                                            <i class="fa fa-facebook"></i>
+                                           
+                                        </a>
+                                    </div>
+   
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                                        <a href="https://twitter.com/Gamora" class="social-button twitter-button">
+                                            <i class="fa fa-twitter"></i>
+                                           
+                                        </a>
+                                    </div>
+   
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                                        <a href="https://instagram.com/Gamora_design" style="background-color: rgb(131,58,180);" class="social-button google-button">
+                                            <i class="fa fa-instagram"></i>
+                                            
+                                        </a>
+                                    </div>
+   
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                                        <a href="https://wa.me/5527995083059?&text=Olá,%20gostaria%20de%20saber%20mais!" style="background-color: green;" class="social-button youtube-button">
+                                            <i class="fa fa-whatsapp"></i>
+                                           
+                                        </a>
+                                    </div>
+                                </div>
+                            </div><!-- end widget -->
+   
+                            <div class="widget">
+                                <div class="banner-spot clearfix">
+                                    <div class="banner-img">
+                                        <script type="text/javascript">
+                                            atOptions = {
+                                                'key' : 'bbf721f3724efaaa62d03843a940b985',
+                                                'format' : 'iframe',
+                                                'height' : 600,
+                                                'width' : 160,
+                                                'params' : {}
+                                            };
+                                            document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.variouscreativeformats.com/bbf721f3724efaaa62d03843a940b985/invoke.js"></scr' + 'ipt>');
+                                        </script>
+                                    </div><!-- end banner-img -->
+                                </div><!-- end banner -->
+                            </div><!-- end widget -->
+                        </div><!-- end sidebar -->
+                    </div><!-- end col -->
+                </div><!-- end row -->
+            </div><!-- end container / -->
+        </section>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
+   
+        <script>
+        $(".dateCreate").each(function(){
+            $(this).html( moment($(this).text()).format("DD/MM/YYYY") )
+        })
+   var dados ;
+        $.ajax({
+            type: 'GET',
+            url: '/getDestaks',
+            data: "",
+            success: function (data) {
+                console.log(data)
+   
+                dados = OrdenaJson(data, 'createdAt', 'DESC')
+                for(const k in data){
+                    var index = Number(k)+1
+                    $(".destak"+(index)+"-link").attr("href", "/artigo/"+data[k].title.replace(/ /g,"_"))
+                    $(".destak"+(index)+"-linkAutor").attr("href", "/autor/"+data[k].credits.replace(/ /g,"_"))
+                    $("#destak"+(index)+"-called").html(data[k].called)
+                    $("#destak"+(index)+"-title").html(data[k].title)
+                    $("#destak"+(index)+"-category").html(data[k].category.replace("destak-", ""))
+                    $("#destak"+(index)+"-img_src").attr("src",data[k].img_src)
+                    $("#destak"+(index)+"-createdAt").html(moment(data[k].createdAt).format("DD/MM/YYYY"))
+                    $("#destak"+(index)+"-credits").html("by "+data[k].credits)
+   
+   
+   
+                }
+                
+                
+            },
+            error: function (data) {
+                console.log(data)
+            },
+            complete: function(){
+                // ao final da requisição...
+            }
+        });
+        var CONTENT = []
+        $(".articles").each(function(){
+            CONTENT.push(
+                {
+                    "title":$(this).find(".titulo").text(),
+                    "called":$(this).find(".called").text(),
+                    "link":$(this).find(".link").attr("href"),
+                    "views":$(this).find(".views").text(),
+                    "img_src":$(this).find(".imagem").attr("src"),
+                    "createdAt":moment($(this).find(".dateCreate").text()).format("YYYY-MM-DD")
+                }
+            )
+   
+        })
+   
+        console.log(CONTENT)
+        var MAIS_ACESSADOS = OrdenaJson(CONTENT, "views", "DESC")
+        var MAIS_RECENTES = OrdenaJson(CONTENT, "createdAt", "DESC")
+   
+   
+       
+    
+        for(let a = 0; a < 5; a++){
+            var HTML = '<a href="'+MAIS_ACESSADOS[a].link+'" class="list-group-item list-group-item-action flex-column align-items-start">'+
+                                            '<div class="w-100 justify-content-between">'+
+                                                '<img src="'+MAIS_ACESSADOS[a].img_src+'" alt="" class="img-fluid float-left">'+
+                                                '<h5 class="mb-1">'+MAIS_ACESSADOS[a].title+'</h5>'+
+                                                '<small>'+moment(MAIS_ACESSADOS[a].createdAt).format("DD/MM/YYYY")+'</small>'+
+                                            '</div>'+
+                                        '</a>';
+   
+            $("#postsMaisAcessados").append(HTML)
+        }
+   
+        for(let a = 0; a < 5; a++){
+            var HTML = '<a href="'+MAIS_RECENTES[a].link+'" class="list-group-item list-group-item-action flex-column align-items-start">'+
+                                            '<div class="w-100 justify-content-between">'+
+                                                '<img src="'+MAIS_RECENTES[a].img_src+'" alt="" class="img-fluid float-left">'+
+                                                '<h5 class="mb-1">'+MAIS_RECENTES[a].title+'</h5>'+
+                                                '<span class="rating">'+
+                                                    '<i class="fa fa-star"></i>'+
+                                                    '<i class="fa fa-star"></i>'+
+                                                    '<i class="fa fa-star"></i>'+
+                                                    '<i class="fa fa-star"></i>'+
+                                                    '<i class="fa fa-star"></i>'+
+                                                '</span>'+
+                                            '</div>'+
+                                        '</a>';
+   
+            $("#atualizacoesRecentes").append(HTML)
+        }
+   
+   
+   
+   
+   
+        function OrdenaJson(lista, chave, ordem) {
+            return lista.sort(function(a, b) {
+                var x = a[chave];
+                var y = b[chave];
+                if (ordem === 'ASC') {
+                    return ((x < y) ? -1 : ((x > y) ? 1 : 0));
+                }
+                if (ordem === 'DESC') {
+                    return ((x > y) ? -1 : ((x < y) ? 1 : 0));
+                }
+            });
+        }
+   
+        </script>
+   
+   

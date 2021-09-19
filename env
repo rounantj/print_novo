@@ -1,0 +1,6 @@
+host_name=mysql669.umbler.com
+pass_key=printMER2022
+user_name=ronan_weg
+database=ronan_weg
+port_db=3306
+port_listen=3000

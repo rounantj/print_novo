@@ -1,0 +1,242 @@
+
+
+        <div class="page-title lb single-wrapper">
+         <div class="container">
+             <div class="row">
+                 <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+                     <h2><i class="fa fa-smyle bg-orange"></i> {{categoria}} <small class="hidden-xs-down hidden-sm-down">Fique por dentro de nossas novidades! </small></h2>
+                 </div><!-- end col -->
+                 <div class="col-lg-4 col-md-4 col-sm-12 hidden-xs-down hidden-sm-down">
+                     <ol class="breadcrumb">
+                         <li class="breadcrumb-item"><a href="/">Início</a></li>                          
+                         <li class="breadcrumb-item active" id="CATEGORIA">{{categoria}}</li>
+                     </ol>
+                 </div><!-- end col -->                    
+             </div><!-- end row -->
+         </div><!-- end container -->
+     </div><!-- end page-title -->
+
+     <section class="section">
+         <div class="container">
+             <div class="row">
+                 <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
+                     <div class="page-wrapper">
+                         <div class="blog-custom-build">
+
+                             {{#each ARTICLES}}
+
+                             <div class="blog-box">
+                                 <div class="post-media">
+                                     <a href="/artigo/{{link}}" title="">
+                                         <img src="{{img_src}}" alt="" class="img-fluid">
+                                         <div class="hovereffect">
+                                             <span class="videohover"></span>
+                                         </div>
+                                         <!-- end hover -->
+                                     </a>
+                                 </div>
+                                 <!-- end media -->
+                                 <div class="blog-meta big-meta text-center">
+                                     <div class="post-sharing">
+                                         <ul class="list-inline">
+                                             <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://printmer.com.br/artigo/{{link}}" class="fb-button btn btn-primary"><i class="fa fa-facebook"></i> <span class="down-mobile">Share on Facebook</span></a></li>
+                                             <li><a href="https://twitter.com/intent/tweet?url=https://printmer.com.br/artigo/{{link}}&text={{title}}&via=Gamora68008343&hashtags=#rebootPrintmer" class="tw-button btn btn-primary"><i class="fa fa-twitter"></i> <span class="down-mobile">Tweet on Twitter</span></a></li>
+                                            
+                                         </ul>
+                                     </div><!-- end post-sharing -->
+                                     <h4><a href="/artigo/{{link}}" title="">{{title}}</a></h4>
+                                     <p>{{called}}</p>
+                                     <small><a href="/{{category}}" title="">{{category}}</a></small>
+                                     <small><a href="/artigo/{{link}}" class="dateCreate" title="">{{createdAt}}</a></small>
+                                     <small><a href="/{{categoria}}" title="">by {{credits}}</a></small>
+                                     <small><a href="#" title=""><i class="fa fa-eye"></i> {{views}}</a></small>
+                                 </div><!-- end meta -->
+                             </div><!-- end blog-box -->
+
+                             <hr class="invis">
+
+                             {{/each}}
+
+                            
+
+                         </div><!-- end blog-custom-build -->
+                     </div><!-- end page-wrapper -->
+
+                     <hr class="invis">
+
+                     <div style="display: none;" class="row">
+                         <div class="col-md-12">
+                             <nav aria-label="Page navigation">
+                                 <ul class="pagination justify-content-center">
+                                     <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                     <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                     <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                     <li class="page-item">
+                                         <a class="page-link" href="#">Next</a>
+                                     </li>
+                                 </ul>
+                             </nav>
+                         </div><!-- end col -->
+                     </div><!-- end row -->
+                 </div><!-- end col -->
+
+                 <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
+                     <div class="sidebar">
+                         <div class="widget">
+                             <div class="banner-spot clearfix">
+                                 <div class="banner-img">
+                                     <img src="upload/banner_07.jpg" alt="" class="img-fluid">
+                                 </div><!-- end banner-img -->
+                             </div><!-- end banner -->
+                         </div><!-- end widget -->
+
+                      
+
+                         <div class="widget">
+                             <h2 class="widget-title">Posts Mais Acessados</h2>
+                             <div class="blog-list-widget">
+                                 <div class="list-group" id="postsMaisAcessados">
+
+
+                                     
+
+                                   
+
+                                 </div>
+                             </div><!-- end blog-list -->
+                         </div><!-- end widget -->
+
+                         <div class="widget">
+                             <h2 class="widget-title">Atualizações Recentes</h2>
+                             <div class="blog-list-widget">
+                                 <div class="list-group" id="atualizacoesRecentes">
+
+                                     
+
+                                   
+                                 </div>
+                             </div><!-- end blog-list -->
+                         </div><!-- end widget -->
+
+                         <div class="widget">
+                           <h2 class="widget-title">Siga-nos</h2>
+                       
+                           <div class="row text-center">
+                               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                                   <a href="https://facebook.com/Gamora_design" class="social-button facebook-button">
+                                       <i class="fa fa-facebook"></i>
+                                      
+                                   </a>
+                               </div>
+                       
+                               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                                   <a href="https://twitter.com/Gamora" class="social-button twitter-button">
+                                       <i class="fa fa-twitter"></i>
+                                      
+                                   </a>
+                               </div>
+                       
+                               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                                   <a href="https://instagram.com/Gamora_design" style="background-color: rgb(131,58,180);" class="social-button google-button">
+                                       <i class="fa fa-instagram"></i>
+                                       
+                                   </a>
+                               </div>
+                       
+                               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                                   <a href="https://wa.me/5527995083059?&text=Olá,%20gostaria%20de%20saber%20mais!" style="background-color: green;" class="social-button youtube-button">
+                                       <i class="fa fa-whatsapp"></i>
+                                      
+                                   </a>
+                               </div>
+                           </div>
+                       </div><!-- end widget -->
+
+                         <div class="widget">
+                             <div class="banner-spot clearfix">
+                                 <div class="banner-img">
+                                     <img src="upload/banner_03.jpg" alt="" class="img-fluid">
+                                 </div><!-- end banner-img -->
+                             </div><!-- end banner -->
+                         </div><!-- end widget -->
+                     </div><!-- end sidebar -->
+                 </div><!-- end col -->
+             </div>
+         </div><!-- end container -->
+     </section>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
+
+     <script>
+     $(".dateCreate").each(function(){
+         $(this).html( moment($(this).text()).format("DD/MM/YYYY") )
+     })
+     $("#CATEGORIA").html($("#CATEGORIA").text().toUpperCase())
+
+     $.ajax({
+         type: 'GET',
+         url: '/getAtualizacoes',
+         data: "",
+         success: function (data) {
+             var MAIS_ACESSADOS = data
+             
+
+
+         
+         
+             for(let a = 0; a < 5; a++){
+                 var HTML = '<a href="'+MAIS_ACESSADOS[a].link+'" class="list-group-item list-group-item-action flex-column align-items-start">'+
+                                                 '<div class="w-100 justify-content-between">'+
+                                                     '<img src="'+MAIS_ACESSADOS[a].img_src+'" alt="" class="img-fluid float-left">'+
+                                                     '<h5 class="mb-1">'+MAIS_ACESSADOS[a].title+'</h5>'+
+                                                     '<small>'+moment(MAIS_ACESSADOS[a].createdAt).format("DD/MM/YYYY")+'</small>'+
+                                                 '</div>'+
+                                             '</a>';
+
+                 $("#postsMaisAcessados").append(HTML)
+             }
+
+             
+         },
+         error: function (data) {
+             // em caso de erro...
+         },
+         complete: function(){
+             // ao final da requisição...
+         }
+     });
+
+     $.ajax({
+         type: 'GET',
+         url: '/getMaisAcessados',
+         data: "/",
+         success: function (data) {
+             var MAIS_RECENTES = data
+             for(let a = 0; a < 5; a++){
+                 var HTML = '<a href="'+MAIS_RECENTES[a].link+'" class="list-group-item list-group-item-action flex-column align-items-start">'+
+                                                 '<div class="w-100 justify-content-between">'+
+                                                     '<img src="'+MAIS_RECENTES[a].img_src+'" alt="" class="img-fluid float-left">'+
+                                                     '<h5 class="mb-1">'+MAIS_RECENTES[a].title+'</h5>'+
+                                                     '<span class="rating">'+
+                                                         '<i class="fa fa-star"></i>'+
+                                                         '<i class="fa fa-star"></i>'+
+                                                         '<i class="fa fa-star"></i>'+
+                                                         '<i class="fa fa-star"></i>'+
+                                                         '<i class="fa fa-star"></i>'+
+                                                     '</span>'+
+                                                 '</div>'+
+                                             '</a>';
+
+                 $("#atualizacoesRecentes").append(HTML)
+             }
+         },
+         error: function (data) {
+             // em caso de erro...
+         },
+         complete: function(){
+             // ao final da requisição...
+         }
+     });
+     
+     </script>
+
